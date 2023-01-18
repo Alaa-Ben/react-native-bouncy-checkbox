@@ -48,6 +48,7 @@ export interface IBouncyCheckboxProps extends BaseTouchableProps {
   iconImageStyle?: CustomStyleProp;
   textContainerStyle?: CustomStyleProp;
   checkIconImageSource?: ImageSourcePropType;
+  iconLeft?: boolean;
   onPress?: (checked: boolean) => void;
 }
 
@@ -174,6 +175,7 @@ class BouncyCheckbox extends React.Component<IBouncyCheckboxProps, IState> {
       bouncinessIn = 20,
       bouncinessOut = 20,
       TouchableComponent = Pressable,
+      iconLeft = false
     } = this.props;
     return (
       <TouchableComponent
@@ -187,8 +189,18 @@ class BouncyCheckbox extends React.Component<IBouncyCheckboxProps, IState> {
         }}
         onPress={this.onPress}
       >
-        {this.renderCheckIcon()}
-        {this.renderCheckboxText()}
+        {
+          iconLeft ? 
+            <>
+              {this.renderCheckboxText()}
+              {this.renderCheckIcon()}
+            </>
+          :
+            <>
+              {this.renderCheckIcon()}
+              {this.renderCheckboxText()}
+            </>
+        }
       </TouchableComponent>
     );
   }

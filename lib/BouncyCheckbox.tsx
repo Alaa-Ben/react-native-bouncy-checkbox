@@ -58,7 +58,7 @@ interface IState {
   bounceValue: Animated.Value;
 }
 
-const defaultCheckImage = require("./check.png");
+const defaultCheckImage = require("./local-assets/check.png");
 
 class BouncyCheckbox extends React.Component<IBouncyCheckboxProps, IState> {
   constructor(props: IBouncyCheckboxProps) {

@@ -49,7 +49,7 @@
   },
   "scripts": {
     "build": "cd lib && tsc && npm run copy:assets && npm run copy:package",
-    "prepare": "husky install",
+    "prepare": "husky install && npm run build",
     "husky:setup": "npx husky-init && npm run husky:commitlint",
     "husky:commitlint": "npx husky add .husky/commit-msg 'npx --no-install commitlint --edit'",
     "semantic-release": "semantic-release",
